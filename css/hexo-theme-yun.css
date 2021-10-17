@@ -189,7 +189,7 @@ body::before {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-image: url("/图片/壁纸 (1).jpg");
+  background-image: url("/图片/白天.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2030,7 +2030,7 @@ body::before {
     color: var(--hty-text-color);
   }
   :root:not([data-user-color-scheme]) body::before {
-    background-image: url("/图片/壁纸 (9).jpg");
+    background-image: url("/图片/夜间.jpg");
   }
   :root:not([data-user-color-scheme]) .char {
     background-color: rgba(0,0,0,0.5);
@@ -2097,7 +2097,7 @@ body::before {
   color: var(--hty-text-color);
 }
 [data-user-color-scheme='dark'] body::before {
-  background-image: url("/图片/壁纸 (9).jpg");
+  background-image: url("/图片/夜间.jpg");
 }
 [data-user-color-scheme='dark'] .char {
   background-color: rgba(0,0,0,0.5);
