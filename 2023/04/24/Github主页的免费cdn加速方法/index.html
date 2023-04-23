@@ -37,7 +37,7 @@ document.addEventListener("pjax:success", initScrollReveal);
 <meta property="og:image" content="http://shawnpi233.github.io/images/cdn/11.png">
 <meta property="og:image" content="http://shawnpi233.github.io/images/cdn/12.png">
 <meta property="article:published_time" content="2023-04-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-04-23T19:37:53.011Z">
+<meta property="article:modified_time" content="2023-04-23T19:51:34.834Z">
 <meta property="article:author" content="ShawnPi">
 <meta property="article:tag" content="经验分享">
 <meta name="twitter:card" content="summary">
@@ -100,14 +100,14 @@ document.addEventListener("pjax:success", initScrollReveal);
 <h2 id="jsDelivr-CDN国内污染问题及解决办法">jsDelivr  CDN国内污染问题及解决办法</h2>
 </li>
 </ol>
-<p>**问题：**但是通过实践发现，上述设置无法在国内正常加载，原因是<code>Jsdelivr</code>国内的CDN服务被DNS污染了，被指向了<code>Google</code>、<code>Twitter</code>和 <code>Facebook</code> 的 IP 地址，导致使用CDN服务加速的链接访问失败。</p>
-<p>**解决方法：**使用其他未被污染的地址进行替换，即把cdn.jsdelivr.net替换为下列的之一</p>
+<p><strong>问题：</strong> 但是通过实践发现，上述设置无法在国内正常加载，原因是<code>Jsdelivr</code>国内的CDN服务被DNS污染了，被指向了<code>Google</code>、<code>Twitter</code>和 <code>Facebook</code> 的 IP 地址，导致使用CDN服务加速的链接访问失败。</p>
+<p><strong>解决方法：</strong> 使用其他未被污染的地址进行替换，即把cdn.jsdelivr.net替换为下列的之一</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fastly.jsdelivr.net</span><br><span class="line">gcore.jsdelivr.net</span><br><span class="line">testingcf.jsdelivr.net</span><br><span class="line">test1.jsdelivr.net</span><br></pre></td></tr></table></figure>
-<p>经过测试，国内大多数地区前两个也无法正常运行，而**<code>testingcf.jsdelivr.net</code>**兼容性较好，我目前也在使用这个地址。</p>
+<p>经过测试，国内大多数地区前两个也无法正常运行，而testingcf.jsdelivr.net兼容性较好，我目前也在使用这个地址。</p>
 <p>这里给一个<strong>可以测试网址在各地访问速度的神奇网站</strong> <a target="_blank" rel="noopener" href="http://17ce.com/">http://17ce.com/</a></p>
 <p>然后下面是我使用testingcf.jsdelivr.net加速后的资源访问时间和速度的结果:</p>
 <p><img src="/images/cdn/11.png" alt="11" loading="lazy"></p>
-<p><img src="/images/cdn/12.png" alt="11" loading="lazy"></p>
+<p><img src="/images/cdn/12.png" alt="12" loading="lazy"></p>
 <p>可以看到，网速还是很给力的，相比github原先个位数kB/s的速度已经是质的飞跃了，用于博客的音视频和图片的传输压力不大。</p>
 <p>参考文章</p>
 <p>【1】<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/346643522">如何使用jsDelivr+Github 实现免费CDN加速</a></p>
