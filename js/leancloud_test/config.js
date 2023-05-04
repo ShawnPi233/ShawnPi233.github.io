@@ -27,8 +27,8 @@ function uuid() {
 // var APP_ID = 'bW7ca26Fgl1LvXlJpBq0w9uG-MdYXbMMI'; //国际版
 // var APP_KEY = 'U85ANTgGGYMiLY7tUHYWPGkN';
 
-// var APP_ID = 'xBfywiBcWnaBX5res3WKixrN-gzGzoHsz';
-// var APP_KEY = 'V1kk03BwJEHc3dLLYtKqCvnN';
+var APP_ID = 'xBfywiBcWnaBX5res3WKixrN-gzGzoHsz';
+var APP_KEY = 'V1kk03BwJEHc3dLLYtKqCvnN';
 AV.init({
   appId: APP_ID,
   appKey: APP_KEY,
