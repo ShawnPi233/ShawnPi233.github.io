@@ -1,13 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>Hexo中的LeanCloud后端使用教程 | Pi酱的秘密基地</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="操作流程   创建LeanCloud国际版用户（实测国内用QQ邮箱申请后，foxmail邮箱也可以重新申请国际版新账号），并创建应用，最好用国际版，否则国内版本需要备案之类的比较麻烦  https:&#x2F;&#x2F;leancloud.app&#x2F;（后来证实需要一直科学上网才能上传表单，因此还是注册国内版就好） 注册用户  LeanCloud   进入应用，点击“创建Class”    进入后选择对应的访问权限">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="ShawnPi"><meta name="copyright" content="ShawnPi"><meta name="generator" content="Hexo 5.4.2"><meta name="theme" content="hexo-theme-yun"><title>Hexo中的LeanCloud后端使用教程 | Pi酱的秘密基地</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.25/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_dxory92pb0h.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link class="aplayer-style-marker" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script class="aplayer-script-marker" src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" defer></script><script class="meting-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js" defer></script><script src="/js/pjax.js" defer></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><link rel="icon" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"shawnpi233.github.io","root":"/","title":"Pi酱的秘密基地","version":"1.6.3","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><meta name="description" content="操作流程   创建LeanCloud国际版用户（实测国内用QQ邮箱申请后，foxmail邮箱也可以重新申请国际版新账号），并创建应用，最好用国际版，否则国内版本需要备案之类的比较麻烦  https:&#x2F;&#x2F;leancloud.app&#x2F;（后来证实需要一直科学上网才能上传表单，因此还是注册国内版就好） 注册用户  LeanCloud   进入应用，点击“创建Class”    进入后选择对应的访问权限">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo中的LeanCloud后端使用教程">
 <meta property="og:url" content="http://shawnpi233.github.io/2023/04/22/LeanCloud/index.html">
@@ -29,78 +41,7 @@
 <meta property="article:author" content="ShawnPi">
 <meta property="article:tag" content="经验分享">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://shawnpi233.github.io/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/1.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Pi酱的秘密基地" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-<meta name="generator" content="Hexo 5.4.2"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Pi酱的秘密基地</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://shawnpi233.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-LeanCloud" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2023/04/22/LeanCloud/" class="article-date">
-  <time datetime="2023-04-21T16:00:00.000Z" itemprop="datePublished">2023-04-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Hexo中的LeanCloud后端使用教程
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="操作流程">操作流程</h2>
+<meta name="twitter:image" content="http://shawnpi233.github.io/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/1.png"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info mickey-mouse"><a class="site-author-avatar" href="/about/" title="ShawnPi"><img width="96" loading="lazy" src="/%E5%9B%BE%E7%89%87/avatar.jpg" alt="ShawnPi"><span class="site-author-status" title="永远相信美好的事情即将发生">😊</span></a><div class="site-author-name"><a href="/about/">ShawnPi</a></div><span class="site-name">Pi酱的秘密基地</span><sub class="site-subtitle"></sub><div class="site-desciption"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">13</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">0</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">7</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/ShawnPi233" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:3041276927@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">操作流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%BF%E5%9D%91%E6%80%BB%E7%BB%93"><span class="toc-number">2.</span> <span class="toc-text">避坑总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-number">3.</span> <span class="toc-text">后记</span></a></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="http://shawnpi233.github.io/2023/04/22/LeanCloud/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="ShawnPi"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Pi酱的秘密基地"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Hexo中的LeanCloud后端使用教程</h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2023-04-22 00:00:00" itemprop="dateCreated datePublished" datetime="2023-04-22T00:00:00+08:00">2023-04-22</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2023-04-23 19:52:45" itemprop="dateModified" datetime="2023-04-23T19:52:45+08:00">2023-04-23</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">1.7k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">6m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><span class="leancloud_visitors" id="/2023/04/22/LeanCloud/" data-flag-title="Hexo中的LeanCloud后端使用教程"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span class="leancloud-visitors-count"></span></span></span><div class="post-classify"><span class="post-tag"><a class="tag-item" href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">经验分享</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h2 id="操作流程">操作流程</h2>
 <ol>
 <li>
 <p><s>创建LeanCloud国际版用户（实测国内用QQ邮箱申请后，foxmail邮箱也可以重新申请国际版新账号），并创建应用，最好用国际版，否则国内版本需要备案之类的比较麻烦</s>  <a target="_blank" rel="noopener" href="https://leancloud.app/%EF%BC%88%E5%90%8E%E6%9D%A5%E8%AF%81%E5%AE%9E%E9%9C%80%E8%A6%81%E4%B8%80%E7%9B%B4%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E6%89%8D%E8%83%BD%E4%B8%8A%E4%BC%A0%E8%A1%A8%E5%8D%95%EF%BC%8C%E5%9B%A0%E6%AD%A4%E8%BF%98%E6%98%AF%E6%B3%A8%E5%86%8C%E5%9B%BD%E5%86%85%E7%89%88%E5%B0%B1%E5%A5%BD%EF%BC%89">https://leancloud.app/（后来证实需要一直科学上网才能上传表单，因此还是注册国内版就好）</a></p>
@@ -108,20 +49,20 @@
 </li>
 <li>
 <p>进入应用，点击“创建Class”</p>
-<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/1.png" alt="1"></p>
+<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/1.png" alt="1" loading="lazy"></p>
 </li>
 <li>
 <p>进入后选择对应的访问权限</p>
-<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/2.png" alt="2"></p>
+<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/2.png" alt="2" loading="lazy"></p>
 </li>
 </ol>
 <p>这里，设置权限的场景可以参考这篇专栏 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/82842893">云开发的数据库权限机制解读丨云开发101 - 知乎 (zhihu.com)</a></p>
 <p>因为做数据调研，调研者只需要采集信息，不需要用户看到或修改其他用户的数据，所以可以限制权限为“仅创建者或管理者可读写数据”即可，如图所示</p>
-<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/3.png" alt="3"></p>
+<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/3.png" alt="3" loading="lazy"></p>
 <ol start="4">
 <li>
 <p>初始化的类数据如图所示：</p>
-<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/4.png" alt="4"></p>
+<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/4.png" alt="4" loading="lazy"></p>
 </li>
 <li>
 <p>设置相关的数据项，此处先省略</p>
@@ -129,11 +70,11 @@
 <li>
 <p><s>在hexo博客项目根目录下git bash, 然后用如下指令安装leancloud依赖</s> (可以跳过，使用cdn加载即可)</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install leancloud-storage --save</span><br></pre></td></tr></table></figure>
-<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/5.png" alt="5"></p>
+<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/5.png" alt="5" loading="lazy"></p>
 </li>
 <li>
 <p>~~然后就可以发现在package.json里出现了leancloud的相关配置，说明安装完成 (~~可以跳过，使用cdn加载即可)</p>
-<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/6.png" alt="6"></p>
+<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/6.png" alt="6" loading="lazy"></p>
 </li>
 <li>
 <p>在markdown或html文件中编写相关的js和html代码，需要注意以下几点：</p>
@@ -148,7 +89,7 @@
 <p>(4) 另外，serverURLs也要设置好，国内版一定要设，否则cdn加载的js会出错；国际版的可以不设置，但是不用科学上网会无法上传表单。因此可以直接使用国内版，加上AV.init()中设置serverURLs即可</p>
 </li>
 </ol>
-<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/11.png" alt="11"></p>
+<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/11.png" alt="11" loading="lazy"></p>
 <ol start="9">
 <li>
 <p>最后，放出所有的JS代码：</p>
@@ -159,13 +100,13 @@
 <p>​</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">formInfo.set(<span class="string">&#x27;result&#x27;</span>, result);</span><br></pre></td></tr></table></figure>
 <p>​    前者为在数据库设置好的key，后者为从表单获取的value，key也就是我们在类中设置的属性值，也就是某一列。下面是通过前端获取表单信息，并返回到leancloud数据库的结果：</p>
-<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/8.png" alt="8"></p>
+<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/8.png" alt="8" loading="lazy"></p>
 </li>
 </ol>
 <p>​	在写demo的时候，没有必要通过hexo发布，可以直接通过vs code的live server插件开启本地端口直接查看js的代码是否正确，亲测使用该插件是可以调用leancloud接口的。</p>
-<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/10.png" alt="10"></p>
+<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/10.png" alt="10" loading="lazy"></p>
 <p>​	另外，很重要的一点是，要善用浏览器的debug功能，打开开发者工具，然后在可能有问题的地方设置断点，比自己瞎改代码快很多。因为js代码的特性，出错也一般不会报错，反馈就会很弱，所以debug非常重要。</p>
-<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/9.png" alt="9"></p>
+<p><img src="/images/Hexo%E4%B8%AD%E7%9A%84LeanCloud%E5%90%8E%E7%AB%AF%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/9.png" alt="9" loading="lazy"></p>
 <h2 id="避坑总结">避坑总结</h2>
 <ol>
 <li>要用浏览器开发者工具debug，不然导入cdn的js出错，网页是不会有任何报错的，改代码就相当于盲人摸象一样效率低下了</li>
@@ -178,147 +119,19 @@
 <p>​	那么，基本demo跑通之后，才是开始介绍我选择Hexo + Leancloud这套方案的原因。因为现在国内做问卷基本都是被问卷星之类的霸占，而问卷星上提供的基本服务无法上传音视频等较大的文件，而付费服务又过于昂贵（企业版动辄2000元一个月的费用，令学生党望而生畏），并且问卷排布也有一定限制。这就促生我使用本地博客，加上后端服务进行问卷调查的想法。由于github.io的域名和服务器以及leancloud都是可以免费使用的，那么问卷的费用就可以大大节省，且问卷系统发布之后，可以接近无期限的使用，复用性也很高，下次换个问卷的话，仅需重新写一篇博客，然后对文件路径以及html的排版和js稍作调整，即可重新发布新的问卷。</p>
 <p><strong>如何用这套方案进行问卷？</strong></p>
 <p>​	这里另开一帖，专门介绍我是如何使用Hexo+Leancloud进行问卷调查的…</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://shawnpi233.github.io/2023/04/22/LeanCloud/" data-id="clteoy8ta0006xwe44xrb2sm6" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" rel="tag">经验分享</a></li></ul>
-
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2023/04/22/Live%20Server/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Live Server：本地HTML代码预览插件
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/10/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">深度学习笔记</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android-%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" rel="tag">Android 经验分享</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Quartus/" rel="tag">Quartus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D/" rel="tag">个人介绍</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%84%9F%E6%82%9F/" rel="tag">感悟</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag">深度学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" rel="tag">深度学习基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" rel="tag">经验分享</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Android-%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" style="font-size: 10px;">Android 经验分享</a> <a href="/tags/Quartus/" style="font-size: 10px;">Quartus</a> <a href="/tags/%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D/" style="font-size: 10px;">个人介绍</a> <a href="/tags/%E6%84%9F%E6%82%9F/" style="font-size: 10px;">感悟</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 10px;">深度学习</a> <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">深度学习基础</a> <a href="/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" style="font-size: 20px;">经验分享</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">四月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/10/">十月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1985/10/">十月 1985</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2024/03/06/svc_test/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/07/28/%E5%9F%BA%E4%BA%8EHexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%BB%E8%A7%82%E8%AF%84%E5%88%86%E7%B3%BB%E7%BB%9F%E4%BB%8E%E9%9B%B6%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/04/24/Github%E4%B8%BB%E9%A1%B5%E7%9A%84%E5%85%8D%E8%B4%B9cdn%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95/">jsdelivery:Github主页的免费cdn加速方法</a>
-          </li>
-        
-          <li>
-            <a href="/2023/04/22/leancloud_test/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2023/04/22/Live%20Server/">Live Server：本地HTML代码预览插件</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2024 ShawnPi<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+</div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>ShawnPi</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="http://shawnpi233.github.io/2023/04/22/LeanCloud/" title="Hexo中的LeanCloud后端使用教程">http://shawnpi233.github.io/2023/04/22/LeanCloud/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2023/04/22/Live%20Server/" rel="prev" title="Live Server：本地HTML代码预览插件"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">Live Server：本地HTML代码预览插件</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2021/10/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="深度学习笔记"><span class="post-nav-text">深度学习笔记</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2024 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> ShawnPi</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.2</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.6.3</span></div><div class="live_time"><span>本博客已经认真工作了</span><span id="display_live_time"></span><span class="moe-text">ヾ(≧▽≦*)o</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-10-13T16:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><div class="aplayer no-destroy" id="aplayer" data-id="6885811196" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay data-theme="#0078E7" data-loop="all" data-order="random" data-preload="auto" data-volume="0.8" data-mutex data-lrctype="1" data-listfolded data-listmaxheight="340px" data-storagename="metingjs"></div></div></body></html>
