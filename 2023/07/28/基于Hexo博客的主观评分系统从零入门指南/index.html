@@ -1,0 +1,396 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="ShawnPi"><meta name="copyright" content="ShawnPi"><meta name="generator" content="Hexo 5.4.2"><meta name="theme" content="hexo-theme-yun"><title>Pi酱的秘密基地</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.25/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_dxory92pb0h.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>function initScrollReveal() {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+}
+document.addEventListener("DOMContentLoaded", initScrollReveal);
+document.addEventListener("pjax:success", initScrollReveal);
+</script><link class="aplayer-style-marker" rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script class="aplayer-script-marker" src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" defer></script><script class="meting-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/pjax@latest/pjax.min.js" defer></script><script src="/js/pjax.js" defer></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><link rel="icon" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"shawnpi233.github.io","root":"/","title":"Pi酱的秘密基地","version":"1.6.3","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><meta name="description" content="基于Hexo博客的主观评分系统从零入门指南 引言 1.1 博客 1.1.1    博客的定义 博客的定义有不同的角度和层次，但一般来说，博客是一种个人或团体在互联网上发布和分享信息的方式，通常以时间倒序的方式展示文章或日志，可以包含文字、图片、音频、视频等多种媒体形式。 1.1.2    搭建博客的意义 写博客很有意义，这是因为通过写博客，我们可以对自己的知识和思路进行梳理复盘，可以作为对过去的记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pi酱的秘密基地">
+<meta property="og:url" content="http://shawnpi233.github.io/2023/07/28/%E5%9F%BA%E4%BA%8EHexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%BB%E8%A7%82%E8%AF%84%E5%88%86%E7%B3%BB%E7%BB%9F%E4%BB%8E%E9%9B%B6%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="Pi酱的秘密基地">
+<meta property="og:description" content="基于Hexo博客的主观评分系统从零入门指南 引言 1.1 博客 1.1.1    博客的定义 博客的定义有不同的角度和层次，但一般来说，博客是一种个人或团体在互联网上发布和分享信息的方式，通常以时间倒序的方式展示文章或日志，可以包含文字、图片、音频、视频等多种媒体形式。 1.1.2    搭建博客的意义 写博客很有意义，这是因为通过写博客，我们可以对自己的知识和思路进行梳理复盘，可以作为对过去的记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-28T03:21:29.431Z">
+<meta property="article:modified_time" content="2023-07-28T03:21:29.578Z">
+<meta property="article:author" content="ShawnPi">
+<meta name="twitter:card" content="summary"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info mickey-mouse"><a class="site-author-avatar" href="/about/" title="ShawnPi"><img width="96" loading="lazy" src="/%E5%9B%BE%E7%89%87/avatar.jpg" alt="ShawnPi"><span class="site-author-status" title="永远相信美好的事情即将发生">😊</span></a><div class="site-author-name"><a href="/about/">ShawnPi</a></div><span class="site-name">Pi酱的秘密基地</span><sub class="site-subtitle"></sub><div class="site-desciption"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">13</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">0</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">7</span></a></div><a class="site-state-item hty-icon-button" target="_blank" rel="noopener" href="https://yun.yunyoujun.cn" title="文档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-settings-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/ShawnPi233" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:3041276927@qq.com" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="我的小伙伴们" style="color:dodgerblue"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-genderless-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">基于Hexo博客的主观评分系统从零入门指南</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">引言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">1.1 博客</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">1.1.1    博客的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">1.1.2    搭建博客的意义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%8A%80%E6%9C%AF%E8%B7%AF%E7%BA%BF"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">1.2  搭建博客的技术路线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E4%B8%BB%E6%B5%81%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6"><span class="toc-number">1.1.0.5.</span> <span class="toc-text">1.3  主流博客框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-Hexo"><span class="toc-number">1.1.0.6.</span> <span class="toc-text">1.4  Hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-1-Hexo%E6%A1%86%E6%9E%B6%E4%BC%98%E7%82%B9"><span class="toc-number">1.1.0.6.1.</span> <span class="toc-text">1.4.1    Hexo框架优点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-2-Hexo%E6%A1%86%E6%9E%B6%E7%BC%BA%E7%82%B9"><span class="toc-number">1.1.0.6.2.</span> <span class="toc-text">1.4.2    Hexo框架缺点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-4-3-Hexo%E6%A1%86%E6%9E%B6%E6%94%B9%E8%BF%9B%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.0.6.3.</span> <span class="toc-text">1.4.3    Hexo框架改进方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA"><span class="toc-number">1.1.0.7.</span> <span class="toc-text">2       Hexo博客搭建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.0.8.</span> <span class="toc-text">2.1  Hexo博客基本配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-1-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%88%E5%AE%89%E8%A3%85%E8%BF%87%E7%9A%84%E5%8F%AF%E4%BB%A5%E8%B7%B3%E8%BF%87%EF%BC%89"><span class="toc-number">1.1.0.8.1.</span> <span class="toc-text">2.1.1    环境搭建（安装过的可以跳过）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-2-%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA"><span class="toc-number">1.1.0.8.2.</span> <span class="toc-text">2.1.2    项目搭建</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9"><span class="toc-number">1.1.0.9.</span> <span class="toc-text">2.2  Hexo博客主题修改</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-1-%E4%B8%BB%E9%A2%98%E4%B8%8B%E8%BD%BD"><span class="toc-number">1.1.0.9.1.</span> <span class="toc-text">2.2.1    主题下载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-2-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.0.9.2.</span> <span class="toc-text">2.2.2    主题配置</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-Hexo%E5%8D%9A%E5%AE%A2%E6%89%93%E5%8C%85%E9%83%A8%E7%BD%B2"><span class="toc-number">1.1.0.10.</span> <span class="toc-text">2.3  Hexo博客打包部署</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-1-%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.0.10.1.</span> <span class="toc-text">2.3.1    生成静态文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-2-%E5%85%B3%E8%81%94Git%E4%BB%93%E5%BA%93"><span class="toc-number">1.1.0.10.2.</span> <span class="toc-text">2.3.2    关联Git仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-3-%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2"><span class="toc-number">1.1.0.10.3.</span> <span class="toc-text">2.3.3    博客部署</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%B8%BB%E8%A7%82%E8%AF%84%E5%88%86%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA"><span class="toc-number">1.1.0.11.</span> <span class="toc-text">3       主观评分系统搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-Hexo%E6%8E%A5%E5%85%A5LeanCloud%E5%90%8E%E7%AB%AF%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.1.0.11.1.</span> <span class="toc-text">3.1  Hexo接入LeanCloud后端服务</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-1-LeanCloud%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.0.11.2.</span> <span class="toc-text">3.1.1    LeanCloud简介</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-2-%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.0.11.3.</span> <span class="toc-text">3.1.2    操作流程</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.1.0.12.</span> <span class="toc-text">3.2  注意事项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%8D%9A%E5%AE%A2%E8%AF%84%E5%88%86%E7%B3%BB%E7%BB%9F%E8%BF%9B%E9%98%B6"><span class="toc-number">1.1.0.13.</span> <span class="toc-text">4       博客评分系统进阶</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E5%8E%9F%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%8D%E8%B6%B3"><span class="toc-number">1.1.0.14.</span> <span class="toc-text">4.1  原系统的不足</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E5%85%8D%E8%B4%B9CDN%E5%8A%A0%E9%80%9F%E5%8D%9A%E5%AE%A2%E8%AE%BF%E9%97%AE"><span class="toc-number">1.1.0.15.</span> <span class="toc-text">4.2  免费CDN加速博客访问</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-1-CDN%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.0.15.1.</span> <span class="toc-text">4.2.1    CDN简介</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-2-CDN%E8%AF%B7%E6%B1%82%E5%88%86%E5%8F%91%E5%8E%9F%E7%90%86"><span class="toc-number">1.1.0.15.2.</span> <span class="toc-text">4.2.2    CDN请求分发原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-3-jsDelivr%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.0.15.3.</span> <span class="toc-text">4.2.3    jsDelivr简介</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-4-jsDelivr-Github-%E5%AE%9E%E7%8E%B0%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.0.15.4.</span> <span class="toc-text">4.2.4    jsDelivr + Github 实现流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-2-5-jsDelivr-CDN%E5%9B%BD%E5%86%85%E6%B1%A1%E6%9F%93%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-number">1.1.0.15.5.</span> <span class="toc-text">4.2.5    jsDelivr CDN国内污染问题及解决办法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E8%AF%84%E5%88%86%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="toc-number">1.1.0.16.</span> <span class="toc-text">5       评分数据处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E5%90%8E%E8%AE%B0"><span class="toc-number">1.1.0.17.</span> <span class="toc-text">6       后记</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="http://shawnpi233.github.io/2023/07/28/%E5%9F%BA%E4%BA%8EHexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%BB%E8%A7%82%E8%AF%84%E5%88%86%E7%B3%BB%E7%BB%9F%E4%BB%8E%E9%9B%B6%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="ShawnPi"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Pi酱的秘密基地"></span><header class="post-header"><h1 class="post-title" itemprop="name headline"></h1><div class="post-meta"><div class="post-time" style="display:block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2023-07-28 11:21:29" itemprop="dateCreated datePublished" datetime="2023-07-28T11:21:29+08:00">2023-07-28</time></div><span class="post-count"><span class="post-symbolcount"><span class="post-meta-item-icon" title="本文字数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-file-word-line"></use></svg></span> <span title="本文字数">7.5k</span><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读时长"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-timer-line"></use></svg></span> <span title="阅读时长">27m</span></span></span><span class="post-busuanzi"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span id="busuanzi_value_page_pv"></span></span></span><span class="leancloud_visitors" id="/2023/07/28/%E5%9F%BA%E4%BA%8EHexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%BB%E8%A7%82%E8%AF%84%E5%88%86%E7%B3%BB%E7%BB%9F%E4%BB%8E%E9%9B%B6%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/" data-flag-title=""><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span class="leancloud-visitors-count"></span></span></span><div class="post-classify"></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h1><strong>基于Hexo博客的主观评分系统从零入门指南</strong></h1>
+<h2 id="引言">引言</h2>
+<h4 id="1-1-博客">1.1 博客</h4>
+<h4 id="1-1-1-博客的定义"><a href="">1.1.1    博客的定义</a></h4>
+<p>博客的定义有不同的角度和层次，但一般来说，博客是一种个人或团体在互联网上发布和分享信息的方式，通常以时间倒序的方式展示文章或日志，可以包含文字、图片、音频、视频等多种媒体形式。</p>
+<h4 id="1-1-2-搭建博客的意义"><a href="">1.1.2    搭建博客的意义</a></h4>
+<p>写博客很有意义，这是因为通过写博客，我们可以对自己的知识和思路进行梳理复盘，可以作为对过去的记录。同时，我们可以通过个人学术博客提高自己在专业领域的影响力，并向读者传达自己的见解与观点。并且，打造个人博客相比于固定平台（博客园、CSDN、知乎）等，可自定义的空间更大，我们对数据的掌控权限也更大。</p>
+<p>当然，搭建个人博客也存在一些问题。比如，搭建博客需要一定的编程和项目管理的基础；博客的域名和服务器大多需要付费；博客维护和管理需要耗费精力等等。</p>
+<h4 id="1-2-搭建博客的技术路线"><a href="">1.2  搭建博客的技术路线</a></h4>
+<p>(1)独立博客，使用自己的网站，需要自己写代码。这种方式需要一定的编程能力和网站管理经验，但是可以让你完全控制你的博客的样式和功能。</p>
+<p>(2)独立博客，使用自己的网站，套用 Hexo、WordPress、Typecho 等框架。这种方式需要有一些网站搭建的基础知识，但是可以让你利用现成的框架和插件来快速搭建博客。</p>
+<p>(3)社区平台，没有自己的网站，使用其他平台，如 CSDN、博客园、Medium、SegmentFault、 简书、知乎、微博等。这种方式不需要任何技术背景，但是不能高度自定义博客的外观和功能。</p>
+<p>​       对比之下，独立博客加上框架的路线是较为简单而实用的。</p>
+<h4 id="1-3-主流博客框架"><a href="">1.3  主流博客框架</a></h4>
+<p>下面是主流的博客框架的简介，本文采用Hexo搭建博客，会在1.4章节对其进行更详尽的介绍。</p>
+<table>
+<thead>
+<tr>
+<th>框架</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VuePress</td>
+<td>基于 Vue.js 的静态博客框架，能够将 Markdown 文件转换为网页，支持主题定制、插件扩展、代码高亮等功能。</td>
+</tr>
+<tr>
+<td>Ghost</td>
+<td>基于 Node.js 的动态博客框架，拥有简洁的界面、快速的性能、丰富的主题和插件，支持多用户管理、SEO优化、社交媒体集成等功能。</td>
+</tr>
+<tr>
+<td>Jekyll</td>
+<td>基于 Ruby 的静态博客框架，能够将 Markdown 文件转换为网页，支持模板引擎、自定义布局、代码高亮等功能，可以与 GitHub Pages 集成。</td>
+</tr>
+<tr>
+<td>Hugo</td>
+<td>基于 Go 语言的静态博客框架，能够将 Markdown 文件转换为网页，支持主题定制、短代码、数据驱动等功能，拥有极快的构建速度。</td>
+</tr>
+<tr>
+<td>WordPress</td>
+<td>基于 PHP 语言的动态博客框架，能让你建立出色的网站、博客或应用。WordPress 功能强大、扩展性高、易于使用，支持多种数据库、多用户管理、SEO优化、社交媒体集成等功能，拥有海量的主题和插件供你选择。</td>
+</tr>
+<tr>
+<td>Typecho</td>
+<td>基于 PHP 语言的动态博客框架，以简洁和高效为设计理念，能让你快速搭建一个优雅的博客。 Typecho 支持多种数据库、Markdown 语法、插件扩展、主题定制、自定义字段、自定义页面等功能，拥有活跃的社区和开发者。</td>
+</tr>
+<tr>
+<td>Hexo</td>
+<td>基于Node.js的静态博客框架，简洁灵活，无后端设计。支持Markdown 语法、插件扩展、主题定制，通过插件扩展可以加入评论管理、数据管理等功能。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-4-Hexo"><a href="">1.4  Hexo</a></h4>
+<p>Hexo 是由Tommy Chen（中国台湾） 在 2012 年创建的一个开源项目，它的目标是让博客写作变得更简单、更快速、更灵活。官方支持中文文档。</p>
+<p>Hexo 的核心是一个命令行工具，它可以让你用简单的命令来创建、管理、部署你的博客。例如，你可以用 hexo init 来初始化一个博客，用 hexo new 来创建一篇新文章，用 hexo generate 来生成静态文件，用 hexo server 来启动一个本地服务器，用 hexo deploy 来部署你的博客到远程服务器。</p>
+<p>Hexo 的另一个特点是它的插件化架构，它可以让你用各种插件来扩展你的博客的功能。例如，你可以用 hexo-renderer-pug 来使用 Pug 模板引擎，用hexo-generator-feed 来生成 RSS 订阅源，用hexo-generator-sitemap 来生成网站地图，用 hexo-filter-plantuml 来支持 PlantUML 图表等等。</p>
+<p>Hexo 还有一个优势是它的主题系统，它可以让你用不同的主题来改变你的博客的外观和风格。Hexo 有很多优秀的主题可供选择，例如 NexT、Butterfly、Fluid、Matery、Volantis 等等。你也可以自己开发或修改主题来满足你的需求。</p>
+<p>Hexo 是一个非常强大和灵活的博客生成器，它可以让你用最少的代码和配置来搭建一个高效和美观的博客。</p>
+<h5 id="1-4-1-Hexo框架优点"><a href="">1.4.1    Hexo</a>框架优点</h5>
+<p>(1)速度快，生成静态网页，无需数据库和后台，加载速度快，安全性高。</p>
+<p>(2)灵活，支持多种模板引擎和插件，可以自定义主题和布局，满足个性化需求。</p>
+<p>(3)简单，使用 Markdown语法编写内容，易于阅读和编辑，支持一键部署到 GitHub Pages, Heroku 或其他平台。</p>
+<h5 id="1-4-2-Hexo框架缺点"><a href="">1.4.2    Hexo</a>框架缺点</h5>
+<p>(1)功能少，相比动态博客框架，静态博客框架的功能较少，例如无法实现评论、搜索、访问统计等功能。</p>
+<p>(2)更新难，每次更新内容或主题都需要重新生成静态网页并部署到服务器上，比较麻烦。</p>
+<p>(3)兼容性差，不同的主题和插件可能会出现兼容性问题，需要自己解决。</p>
+<h5 id="1-4-3-Hexo框架改进方法"><a href="">1.4.3    Hexo</a>框架改进方法</h5>
+<p>Hexo支持修改主题，而且主题丰富。我们可以通过修改主题中的配置文件，加入第三方API来添加相应功能。例如，可以使用第三方评论服务，如 Disqus, Valine, Gitalk 等，将评论代码嵌入到 Hexo 的主题中，实现评论功能。使用第三方搜索服务，如 Algolia, Google Custom Search 等，将搜索代码嵌入到 Hexo 的主题中，实现搜索功能。使用第三方统计服务，如 Google Analytics, 不蒜子, LeanCloud 等，将统计代码嵌入到 Hexo 的主题中，实现访问统计功能。</p>
+<h4 id="2-Hexo博客搭建"><a href="">2       Hexo</a>博客搭建</h4>
+<h4 id="2-1-Hexo博客基本配置"><a href="">2.1  Hexo</a>博客基本配置</h4>
+<h5 id="2-1-1-环境搭建（安装过的可以跳过）"><a href="">2.1.1    环境搭建（安装过的可以跳过）</a></h5>
+<p>(1)   安装 Node.js（建议下载稳定版本，官网链接：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn">Node.js (nodejs.org)</a>）</p>
+<p>Node.js是一个开源的、跨平台的JavaScript运行环境。它可以让你在服务器端运行JavaScript代码，并且支持异步编程。</p>
+<p>(2)   注册GitHub</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/">GitHub</a>是一个基于Git的在线平台，你可以在上面创建和托管你的代码仓库，参与开源社区，审查代码，追踪缺陷和功能，支持持续集成和持续部署，以及保护你的代码安全。</p>
+<p>(3)   安装配置Git（官网链接：<a target="_blank" rel="noopener" href="https://git-scm.com/">Git(git-scm.com)</a>，国内访问较慢可以点这里：<a target="_blank" rel="noopener" href="https://pc.qq.com/detail/13/detail_22693.html">Git下载（腾讯软件中心官网）</a>）</p>
+<p>Git是一个免费的、开源的分布式版本控制系统。它可以帮助你管理你的代码项目，跟踪代码的变化，创建和合并分支，以及与其他开发者协作。</p>
+<p>(i) 按照链接下载Git；</p>
+<p>(ii)下载完一般一路默认，然后在命令行窗口输入git查看是否安装成功；</p>
+<p>​</p>
+<p>(iii) 配置环境。任意一个文件夹下，右键点击“Git Bash Here”，然后</p>
+<p>配置账号，输入指令：</p>
+<p>git config–global <a target="_blank" rel="noopener" href="http://user.name">user.name</a> “你的Github用户名” //Git账号</p>
+<p>git config–global user.email “你的Github邮箱” //Git注册邮箱</p>
+<p>查询配置，输入指令：</p>
+<p>git config–global --list</p>
+<p>生成ssh文件夹（文件目录-C:\Users\用户名.ssh），输入指令：</p>
+<p>ssh-keygen -trsa</p>
+<p>配置SSH：</p>
+<p>​       将生成的SSH密钥复制到Github中。依次点击“Settings”、“SSH and GPG keys”、“New SSH key”并添加SSH，最后点击“Add SSH key”进行保存。</p>
+<p>(4)   安装Hexo</p>
+<p>在命令行窗口或者Git bash中输入以下命令安装：</p>
+<p>npm installhexo-cli -g</p>
+<p># 如果安装失败，可能是没有权限，可以尝试头部加上 sudo 重新执行</p>
+<p># sudo npminstall hexo-cli -g</p>
+<p>​</p>
+<p>这里的npm是Node.js的包管理器。它可以让你安装和管理Node.js的模块，分享和重用代码，以及管理你的项目的依赖。npm是随Node.js一起安装的，所以你不需要单独下载或安装npm。</p>
+<p>​       hexo-cli是一个用于创建和管理博客的工具。</p>
+<p>-g表示全局安装，这样你就可以在任何目录下使用hexo-cli这个命令了。</p>
+<h5 id="2-1-2-项目搭建"><a href="">2.1.2    项目搭建</a></h5>
+<p>(1)新建仓库</p>
+<p>登录后，点击头像旁边的“+”，再点击“New repository”，然后给仓库命名为“<a target="_blank" rel="noopener" href="http://username.github.io">username.github.io</a>”，该username即你的github用户名。英文部分最好都用小写，避免git时大小写转换的麻烦。</p>
+<p>然后点击“Createrepository”，创建仓库成功。</p>
+<p>(2) 创建博客目录</p>
+<p>在想要放置博客资源的文件夹中右键“Git bash here”。例如，在D:\Blog路径点击“Git bash here”，那么按照后续操作会在Blog文件夹中创建一个名为“<a target="_blank" rel="noopener" href="http://username.github.io">username.github.io</a>”的文件夹，其中会存放你的所有博客资源。</p>
+<p>接下来输入：</p>
+<p>hexo init <a target="_blank" rel="noopener" href="http://username.github.io">username.github.io</a></p>
+<p>然后执行下列指令：</p>
+<p># 进入你的博客文件夹</p>
+<p>cd <a target="_blank" rel="noopener" href="http://xn--6qqv7i7thbp4a.github.io">你的名字.github.io</a></p>
+<p># 默认安装所有 <code>package.json</code> 文件中提到的包</p>
+<p>npm install</p>
+<p># 你也可以缩写成 hexo s</p>
+<p>hexo server</p>
+<p>server 代表开启本地的 Hexo 服务器，这时你就可以打开浏览器，在地址栏中输入 localhost:4000 就可以看到本地的网页了。Ctrl + C 终止服务器的运行。</p>
+<h4 id="2-2-Hexo博客主题修改"><a href="">2.2  Hexo</a>博客主题修改</h4>
+<h5 id="2-2-1-主题下载"><a href="">2.2.1    主题下载</a></h5>
+<p>Hexo 默认提供的是 hexo-theme-landscape 主题。 默认主题样式简单，功能较少。但是Hexo官网的主题中心（<a target="_blank" rel="noopener" href="https://hexo.io/themes/index.html">Themes | Hexo</a>）包含了许多第三方开发的主题，可以用于修改。其中包括了NexT、Fluid、Butterfly、Matery等。</p>
+<p>我使用的是国内某开发者在NexT基础上魔改的主题（<a target="_blank" rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun">YunYouJun/hexo-theme-yun:(github.com)</a>）。选定主题后，可以直接在博客的目录里git clone</p>
+<p>git clonehttps://github.com/YunYouJun/hexo-theme-yun themes/yun</p>
+<p>其中，themes/yun 则代表放在你 Hexo 文件夹下的 themes/yun 文件夹里（没有该文件夹会自动新建）</p>
+<h5 id="2-2-2-主题配置"><a href="">2.2.2    主题配置</a></h5>
+<p>进入博客目录，编辑配置文件“_config.yml”，具体可见官方文档（<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">配置 | Hexo</a>）。</p>
+<p>将主题修改为“themes”中的文件夹名称。</p>
+<p>由于yun主题使用了 pug 和 stylus，而 Hexo 自带的一般是 ejs 与 stylus，所以还需要输入以下命令安装渲染器。</p>
+<p>npm installhexo-render-pug hexo-renderer-stylus</p>
+<p>然后使用 hexoserver 重新启动服务器，就可以发现主题已经更新了。</p>
+<p>如果想对主题进行一些自定义，可以在source/_data目录下新建一个配置文件yun.yml。（若 source/_data 目录不存在，请新建）</p>
+<p>该主题将自定义配置与默认配置进行合并，因此只需要在 yun.yml 文件中自定义需要的配置即可，其余仍将自动采用默认配置。这样做可以避免该主题更新时我们对主题的改动被覆盖。</p>
+<h4 id="2-3-Hexo博客打包部署"><a href="">2.3  Hexo</a>博客打包部署</h4>
+<h5 id="2-3-1-生成静态文件"><a href="">2.3.1    生成静态文件</a></h5>
+<p>上述操作只能保证在本地正常运行，如果想要通过外网访问，则还需要博客打包部署。由于GitHub Pages 只支持纯静态文件，所以我们需要使用以下命令先来生成站点的静态文件。</p>
+<p>hexo clean</p>
+<p># 如果进行多次生成，为了避免受错误缓存影响，最好使用 hexo clean 先清除一遍。</p>
+<p>hexo generate</p>
+<p># 缩写为 hexo g</p>
+<p>此时你的博客目录下会出现 public 文件夹，里面存放的就是你站点的静态文件。</p>
+<h5 id="2-3-2-关联Git仓库"><a href="">2.3.2    关联Git</a>仓库</h5>
+<p>首次关联时需要初始化Git仓库。</p>
+<p>git init # 初始化 Git 仓库，只需要执行一次即可</p>
+<p>部署后，GitHubPages 将默认使用你的 master分支作为静态文件部署。 所以我们最好新建一个 hexo 分支（命名无所谓）用来存储 Hexo 地源代码，master 分支则用来存储部署后的静态文件。</p>
+<p>git checkout -b hexo</p>
+<p>这时便成功建立了一个 hexo 分支。（此后的工作都将在 hexo 分支下进行）</p>
+<h5 id="2-3-3-博客部署"><a href="">2.3.3    博客部署</a></h5>
+<p>为了更方便的部署到GitHub Pages，Hexo 提供了 hexo-deployer-git 插件。输入指令安装：</p>
+<p>npm install hexo-deployer-git</p>
+<p>在博客目录的_config.yml中配置：</p>
+<p>保存后再在博客目录下Git bash输入</p>
+<p>hexo deploy #或hexo d</p>
+<p>再打开网址 <a target="_blank" rel="noopener" href="https://xn--6qqv7i7thbp4a.github.io">https://你的名字.github.io</a>即可访问你的个人博客。</p>
+<p>为了避免后续博客发布部署重复输入指令，我们可以在博客文件夹外写好三个shell指令用于一键本地预览、资源更新和部署。</p>
+<p>（1）本地预览：</p>
+<p>cd /d/Blogs/你的用户名.github.io</p>
+<p>hexo clean</p>
+<p>hexo g</p>
+<p>hexo s</p>
+<p>（2）资源更新：</p>
+<p>cd /d/Blogs/mycdn（存放静态资源的文件夹）</p>
+<p>git add .</p>
+<p>git commit -m ‘123’</p>
+<p>git push</p>
+<p>（3）一键部署：</p>
+<p>cd /d/Blogs/你的用户名.github.io</p>
+<p>hexo clean</p>
+<p>hexo g</p>
+<p>hexo d</p>
+<p>那么我们后续想要发布博客时，可以在source目录下更新静态资源。</p>
+<p>例如，_posts用于存放markdown的博客文件，audios、images、js分别存放音频、图片和js代码等静态文件。在写博客时，可以使用Typora编辑器，在最开头加上用于相对路径引用图片静态资源。</p>
+<p>typora-root-url是Typora的一个配置参数，它可以让你在Typora中使用相对路径来插入图片。这样，当你导出或发布你的文档时，图片的路径会自动调整，不会出现图片丢失或无法显示的问题。typora-root-url: …这句话的意思是，你的图片文件夹在你的文档文件夹的上一级目录。你可以在Typora的菜单栏中选择格式→图片→使用图片根路径来自动生成typora-root-url参数</p>
+<p>​       当然，我们也可以直接在_posts文件夹中写html代码，后续也可以正常发布。</p>
+<h4 id="3-主观评分系统搭建"><a href="">3       主观评分系统搭建</a></h4>
+<h5 id="3-1-Hexo接入LeanCloud后端服务"><a href="">3.1  Hexo</a>接入LeanCloud后端服务</h5>
+<p>正如前文讲到的，Hexo是一款轻量化的博客框架，本身不提供后端，那么我们想要依靠Hexo博客打造评分系统，首先要解决的就是如何获取和保存用户的评分数据。这里我采用的依然是免费的方案——Hexo+LeanCloud。</p>
+<h5 id="3-1-1-LeanCloud简介"><a href="">3.1.1    LeanCloud</a>简介</h5>
+<p>LeanCloud是一家提供完整和成熟的后端解决方案的公司，它可以帮助开发者快速开发和部署无服务器（serverless）的应用。LeanCloud的服务包括数据库、存储、云函数、即时通讯、推送、统计等。诸如valine这样的Hexo第三方评论插件，实际上也是使用了LeanCloud的后端服务。</p>
+<h5 id="3-1-2-操作流程"><a href="">3.1.2    操作流程</a></h5>
+<p>(1)   注册用户 <a target="_blank" rel="noopener" href="https://www.leancloud.cn/">LeanCloud</a></p>
+<p>(2)   进入应用，点击“创建Class”</p>
+<p>(3)   进入后选择对应的访问权限</p>
+<p>这里，设置权限的场景可以参考这篇专栏 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/82842893">云开发的数据库权限机制解读丨云开发101 - 知乎 (zhihu.com)</a></p>
+<p>因为做数据调研，调研者只需要采集信息，不需要用户看到或修改其他用户的数据，所以可以限制权限为“仅创建者或管理者可读写数据”即可，如图所示</p>
+<p>初始化的类数据如图所示：</p>
+<p>(4)   在class中新建相关的数据项</p>
+<p>(5)   在markdown或html文件中编写相关的js和html代码，需要注意以下几点：</p>
+<p>(i) <strong>在博客开头处设置加载<strong><strong>leancloud</strong></strong>的<strong><strong>cdn</strong></strong>资源的脚本</strong></p>
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<p>(ii) <strong>经过上述设置后无需在后面初始化<strong><strong>AV</strong></strong>时重新定义变量****AV</strong>(因为加载cdn的时候会自动定义AV，如果像下面这样手动定义，就会把原来的cdn资源中定义好的变量覆盖了)</p>
+<p>下面是错误示范：</p>
+<p>…<br>
+var AV = require(‘leancloud-storage’);//错误之处<br>
+var APP_ID = ‘<your app id>’;<br>
+var APP_KEY = ‘<your app key>’;<br>
+AV.init({<br>
+appId: APP_ID,<br>
+appKey: APP_KEY<br>
+});<br>
+…</p>
+<p>正确示范：</p>
+<p>…<br>
+var APP_ID = ‘<your app id>’;<br>
+var APP_KEY = ‘<your app key>’;<br>
+AV.init({<br>
+appId: APP_ID,<br>
+appKey: APP_KEY,<br>
+serverURLs: ‘这里复制对应app的rest api 服务地址’<br>
+});<br>
+…</p>
+<p>(iii) 点击“设置”-“应用凭证”，要进去复制app id和app key，否则也无法直接使用</p>
+<p>(iv) 另外，serverURLs也要设置好，国内版一定要设，否则cdn加载的js会出错；国际版的可以不设置，但是不用科学上网会无法上传表单。因此可以直接使用国内版，加上AV.init()中设置serverURLs即可</p>
+<p>(6)   最后，放出所有的JS代码：</p>
+<script>
+  // 初始化leancloud的应用ID和应用Key
+  var APP_ID = 'your app id';
+  var APP_KEY = 'your app key';
+  AV.init({
+​    appId: APP_ID,
+​    appKey: APP_KEY，
+​    serverURLs: '这里复制对应app的rest api 服务地址'
+  });
+
+  // 获取html表单元素
+  var form = document.getElementById('myForm');
+
+  // 监听表单的提交事件
+  form.addEventListener('submit', function(event) {
+​    // 阻止表单的默认提交行为
+​    event.preventDefault();
+
+​    // 获取表单中的输入值
+​    var result = form.elements['result'].value;
+
+​    // 创建一个leancloud的对象类，用于存储表单信息
+​    var FormInfo = AV.Object.extend('form_data');
+
+​    // 创建一个FormInfo的实例
+​    var formInfo = new FormInfo();
+
+​    // 设置实例的属性值
+​    formInfo.set('result', result);
+
+​    // 将实例保存到leancloud的后端服务中
+​    formInfo.save().then(function (formInfo) {
+​      // 成功保存后，打印日志并显示提示信息
+​      console.log('保存成功，对象ID为' + formInfo.id);
+​      alert('提交成功，感谢您的反馈！');
+}, function (error) {
+​      // 失败保存后，打印错误信息并显示提示信息
+​      console.error(error);
+​      alert('提交失败，请重试或者联系管理员！');
+});
+  });
+</script>
+<p>其中</p>
+<p>​    var FormInfo = AV.Object.extend(‘FormInfo’);</p>
+<p>表示从类FormInfo继承了一个子类，这个类就是我们在LeanCloud应用中创建的类名</p>
+<p>​    formInfo.set(‘result’, result);</p>
+<p>前者为在数据库设置好的key，后者为从表单获取的value，key也就是我们在类中设置的属性值，也就是某一列。下面是通过前端获取表单信息，并返回到leancloud数据库的结果：</p>
+<p>在写demo的时候，没有必要通过hexo发布，可以直接通过vs code的live server插件开启本地端口直接查看js的代码是否正确，亲测使用该插件是可以调用leancloud接口的。</p>
+<p>另外，很重要的一点是，要善用浏览器的debug功能，打开开发者工具，然后在可能有问题的地方设置断点，比自己瞎改代码快很多。因为js代码的特性，出错也一般不会报错，反馈就会很弱，所以debug非常重要。</p>
+<p>下面是我的主观评测页面：</p>
+<p>通过简单的js语句对用户表单输入进行判定和收集，得到下面的结果：</p>
+<h4 id="3-2-注意事项"><a href="">3.2  注意事项</a></h4>
+<p>(1)   要用浏览器开发者工具debug，不然导入CDN的js出错，网页是不会有任何报错的，改代码就相当于盲人摸象一样效率低下了；</p>
+<p>(2)   要多浏览官方的开发者文档，并注意内容的时效性；</p>
+<p>(3)   如果访问博客的群体以国内为主，那还是推荐使用LeanCloud的国内版，</p>
+<p>因为访问无需科学上网。但是需要注意设置好serverURLs；</p>
+<p>(4)   CDN加载LeanCloud的js和npm本地导入js都是可行的，但注意不要两者</p>
+<p>一起用，否则自己导入后重新定义变量AV会覆盖CDN加载的。我认为CDN加载的已经够用了，没必要使用本地导入的，需要安装且容易出问题。</p>
+<h4 id="4-博客评分系统进阶"><a href="">4       博客评分系统进阶</a></h4>
+<h4 id="4-1-原系统的不足"><a href="">4.1  原系统的不足</a></h4>
+<p>尽管上述过程看似可以很好地解决问卷问题，但实际上还有几个主要问题尚待解决。</p>
+<p>(1)   安全性</p>
+<p>由于我们最后发布的网页html明文可以直接通过源代码查看的方式暴露，所以我们的代码包括所用的API接口是暴露的，这样会导致别有用心的访问者可以通过获取API ID和API Key来调用我们的接口进行数据修改。</p>
+<p>针对这个问题，我采取过本地编写js文件，然后用相对路径调用本地js来避免代码的直接暴露。但是这个方法最后因为CORB（跨域读取阻止）问题而不得不放弃。</p>
+<p>(2)   并发控制</p>
+<p>LeanCloud免费版仅提供个位数的并发，并且商业版也最大仅支持60并发数，如果多人同时填写提交问卷，会导致后端无法正常处理数据。</p>
+<p>因此，针对该现象，可以使用其他的云数据库作为后端，来替代LeanCloud。替换Leancloud为本地数据库或MongoDB Cloud Atlas云数据库，免费版支持100的并发，并支持512MB的数据库存储空间。同时，使用Vercel进行部署托管，可以为hexo的静态网页加入更多的后端操作。</p>
+<p>(3)   访问速度</p>
+<p>国内访问Github Page加载静态资源过慢。因此，可以采用CDN部署静态资源，进行加速。下面我将介绍如何使用CDN加快博客的访问速度。</p>
+<h4 id="4-2-免费CDN加速博客访问"><a href="">4.2  免费</a>CDN加速博客访问</h4>
+<p>4</p>
+<p>4.1</p>
+<p>4.2</p>
+<h5 id="4-2-1-CDN简介"><a href="">4.2.1    CDN</a>简介</h5>
+<p>CDN 全称Content Delivery Network，即内容分发网络，是一组分布在多个不同地方的WEB服务器，可以更加有效的向用户提供资源，会根据距离的远近来选择 。使用户能就近的获取请求数据，解决网络拥堵，提高访问速度，解决由于网络带宽小，用户访问量大，网点分布不均等原因导致的访问速度慢的问题。</p>
+<h5 id="4-2-2-CDN请求分发原理"><a href="">4.2.2    CDN</a>请求分发原理</h5>
+<p>(1)用户向浏览器提供需要访问的域名；</p>
+<p>(2)浏览器调用域名解析库对域名进行解析，由于CDN对域名解析过程进行了调整，所以解析函数库一般得到的是该域名对应的CNAME记录，为了得到实际的IP地址，浏览器需要再次对获得的CNAME域名进行解析以得到实际的IP地址；在此过程中，使用的全局负载均衡DNS解析。如根据地理位置信息解析对应的IP地址，使得用户能就近访问；</p>
+<p>(3)此次解析得到CDN缓存服务器的IP地址，浏览器在得到实际的IP地址之后，向缓存服务器发出访问请求；</p>
+<p>(4)缓存服务器根据浏览器提供的要访问的域名，通过Cache内部专用DNS解析得到此域名的实际IP地址，再由缓存服务器向此实际IP地址提交访问请求；</p>
+<p>(5)缓存服务器从实际IP地址得到内容以后，一方面在本地进行保存，以备以后使用，二方面把获取的数据放回给客户端，完成数据服务过程；</p>
+<p>(6)客户端得到由缓存服务器返回的数据以后显示出来并完成整个浏览的数据请求过程。</p>
+<h5 id="4-2-3-jsDelivr简介"><a href="">4.2.3    jsDelivr</a>简介</h5>
+<p>jsDelivr是一个免费、快速和可信赖的CDN加速服务，它每个月可以支撑680亿次的请求。服务在Github上是开源的。目前，它提供了针对npm、Github和WordPress的加速服务，只需要一行代码就可以获得加速效果。只要我们的项目中用到了第三方的静态资源，譬如JavaScript脚本，css样式表，图片，图标，Flash等静态资源文件都应该考虑接入到CDN中。</p>
+<h5 id="4-2-4-jsDelivr-Github-实现流程"><a href="">4.2.4    jsDelivr + Github </a>实现流程</h5>
+<p>(1)新建Github仓库，可以命名为“mycdn”，用于存放我们所要的静态资源（图片、音频、CSS等）</p>
+<p>(2)使用git clone 命令将仓库克隆到本地</p>
+<p>这里，我们在博客资源文件夹的上一级目录下进行git bash here,并输入指令：</p>
+<p>git clone <a target="_blank" rel="noopener" href="https://github.com/%E4%BD%A0%E7%9A%84github%E7%94%A8%E6%88%B7%E5%90%8D/mycdn.git">https://github.com/你的github用户名/mycdn.git</a></p>
+<p>(3)将所需资源复制到创建好的mycdn文件夹中，并使用git push上传到github仓库中，这里我将博客源文件source整个拖入，这样可以减少后面修改文件路径</p>
+<p>(4)检查本地仓库上传成功后，点击&quot;Createa new release&quot;，进行项目发布</p>
+<p>发布时应该是这样的：</p>
+<p>发布后应该是这样的：</p>
+<p>这样一来，我们的本地资源就已经可以通过CDN分发了，也就是说我们可以通过URL的形式访问这些资源，这样一来就可以避免直接从GitHub服务器访问，大大加快资源加载速度。</p>
+<p>(5)通过jsDelivr引用资源。例如我们可在hexo主页加入CDN中的音频。</p>
+<p>&lt;audio<br>
+​    controls<br>
+​    preload=“auto”<br>
+​    src = ‘<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D/mycdn/source/audios/1.mp3">https://cdn.jsdelivr.net/gh/你的用户名/mycdn/source/audios/1.mp3</a>’&gt;<br>
+</audio></p>
+<p>对比一下使用本地的方式：</p>
+<p>&lt;audio<br>
+​    controls<br>
+​    preload=“auto”<br>
+​    src = ‘/source/audios/1.mp3’&gt;<br>
+</audio></p>
+<p>相比之下，改动很小，只需要在src前加一个前缀，即可做到无痛加速。</p>
+<p>另外，我们还可以指定release的版本来加载文件，例如在用户名后加“@版本号”，即可访问改版本的数据。</p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D@1.0/mycdn/source/audios/1.mp3">https://cdn.jsdelivr.net/gh/你的用户名@1.0/mycdn/source/audios/1.mp3</a></p>
+<p>(6) 最后只要重新使用hexo指令发布博客即可实现免费加速</p>
+<p>后续如果想要更新资源，只需要重复步骤(3)-(6)，对本地和发布版本的资源进行更新即可。</p>
+<h5 id="4-2-5-jsDelivr-CDN国内污染问题及解决办法"><a href="">4.2.5    jsDelivr CDN</a>国内污染问题及解决办法</h5>
+<p>**问题：**但是通过实践发现，上述设置无法在国内正常加载，原因是Jsdelivr国内的CDN服务被DNS污染了，被指向了Google、Twitter和 Facebook 的 IP 地址，导致使用CDN服务加速的链接访问失败。</p>
+<p>**解决方法：**使用其他未被污染的地址进行替换，即把cdn.jsdelivr.net替换为下列的之一</p>
+<p><a target="_blank" rel="noopener" href="http://fastly.jsdelivr.net">fastly.jsdelivr.net</a><br>
+<a target="_blank" rel="noopener" href="http://gcore.jsdelivr.net">gcore.jsdelivr.net</a><br>
+<a target="_blank" rel="noopener" href="http://testingcf.jsdelivr.net">testingcf.jsdelivr.net</a><br>
+<a target="_blank" rel="noopener" href="http://test1.jsdelivr.net">test1.jsdelivr.net</a></p>
+<p>经过测试，国内大多数地区前两个也无法正常运行，<a target="_blank" rel="noopener" href="http://xn--testingcf-ft0y.jsdelivr.net">而testingcf.jsdelivr.net</a> 兼容性较好，我目前也在使用这个地址。这里给一个可以测试网址在各地访问速度的神奇网站 <a target="_blank" rel="noopener" href="http://17ce.com/">http://17ce.com/</a></p>
+<p>下面是使用testingcf.jsdelivr.net加速后的资源访问时间和速度的结果：</p>
+<p>可以看到，网速还是很给力的，相比github原先个位数kB/s的速度已经是质的飞跃了，用于博客的音视频和图片的传输压力不大。</p>
+<p>​</p>
+<h4 id="5-评分数据处理"><a href="">5       评分数据处理</a></h4>
+<p>我将网页表单的问卷数据用逗号连接，返回一个字符串，再通过Python对结果进行解析和统计，最后得到CSV文件。</p>
+<p>通过LeanCloud收集到的数据最后可以用JSON或CSV格式进行下载。</p>
+<p>​       使用Python 解析得到下列结果：</p>
+<p>​       汇总统计结果：</p>
+<h4 id="6-后记"><a href="">6       后记</a></h4>
+<p>主观评测的方法有很多，为什么要采用这套方案？</p>
+<p>因为现在国内做问卷基本都是被问卷星之类的霸占，而问卷星上提供的基本服务无法上传音视频等较大的文件，而付费服务又过于昂贵（企业版动辄2000元一个月的费用，令学生党望而生畏），并且问卷排布也有一定限制。这就促生我使用本地博客，加上后端服务进行问卷调查的想法。</p>
+<p>由于github.io的域名和服务器以及LeanCloud都是可以免费使用的，那么问卷的费用就可以大大节省，且问卷系统发布之后，可以接近无期限的使用，复用性也很高，下次换个问卷的话，仅需重新写一篇博客，然后对文件路径以及html的排版和js稍作调整，即可重新发布新的问卷。</p>
+<p>并且相对于小程序以及其他一些平台，受内容审核限制会较小。而相较于在本地搭建服务器进行后台管理，这套方案也足够简单轻量，不必为了问卷临时搭建服务器和购买域名。</p>
+<p>当然，缺点也是显而易见的，由于缺少真正的后端，我们的表单数据采集和异步控制全都依赖于前端的js代码，并且由于暂时没有好的办法解决CORB（这需要后端服务器修改相关权限，而我们使用LeanCloud作为后端只能调用API，无法修改权限），会导致我们在编写的HTML里调用本地js代码也会出现问题。不过，这个问题应该可以通过替换后端方案为MongoDB云数据库等来解决。由于目前我还没验证过这套方案的可行性，因此暂不介绍。</p>
+<p><a href="">参考文献</a></p>
+<p>[1]<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43951315/article/details/104921428?spm=1001.2101.3001.6661.1&amp;utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-104921428-blog-127597405.pc_relevant_recovery_v2&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-104921428-blog-127597405.pc_relevant_recovery_v2&amp;utm_relevant_index=1">Git下载、安装及环境配置 FaxMiao的博客-CSDN博客</a></p>
+<p>[2]<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/113209647">教你如何从零开始搭建一个属于自己的网站 - 知乎 (zhihu.com)</a></p>
+<p>[3]<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/346643522">如何使用jsDelivr+Github 实现免费CDN加速</a></p>
+<p>[4]<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45260582/article/details/129272400?spm=1001.2101.3001.6650.2&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EYuanLiJiHua%7EPosition-2-129272400-blog-124820135.235%5Ev31%5Epc_relevant_default_base3&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EYuanLiJiHua%7EPosition-2-129272400-blog-124820135.235%5Ev31%5Epc_relevant_default_base3&amp;utm_relevant_index=5">jsDelivr的CDN加速被污染-CSDN博客</a></p>
+</div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>ShawnPi</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="http://shawnpi233.github.io/2023/07/28/%E5%9F%BA%E4%BA%8EHexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%BB%E8%A7%82%E8%AF%84%E5%88%86%E7%B3%BB%E7%BB%9F%E4%BB%8E%E9%9B%B6%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/" title="">http://shawnpi233.github.io/2023/07/28/%E5%9F%BA%E4%BA%8EHexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%B8%BB%E8%A7%82%E8%AF%84%E5%88%86%E7%B3%BB%E7%BB%9F%E4%BB%8E%E9%9B%B6%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2024/03/06/svc_test/" rel="prev" title=""><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text"></span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2023/04/24/Github%E4%B8%BB%E9%A1%B5%E7%9A%84%E5%85%8D%E8%B4%B9cdn%E5%8A%A0%E9%80%9F%E6%96%B9%E6%B3%95/" rel="next" title="jsdelivery:Github主页的免费cdn加速方法"><span class="post-nav-text">jsdelivery:Github主页的免费cdn加速方法</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2024 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> ShawnPi</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.2</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.6.3</span></div><div class="live_time"><span>本博客已经认真工作了</span><span id="display_live_time"></span><span class="moe-text">ヾ(≧▽≦*)o</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-10-13T16:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span><script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><div class="aplayer no-destroy" id="aplayer" data-id="6885811196" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay data-theme="#0078E7" data-loop="all" data-order="random" data-preload="auto" data-volume="0.8" data-mutex data-lrctype="1" data-listfolded data-listmaxheight="340px" data-storagename="metingjs"></div></div></body></html>

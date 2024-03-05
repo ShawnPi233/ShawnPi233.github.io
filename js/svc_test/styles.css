@@ -1,0 +1,45 @@
+/* styles.css */
+.tooltip {
+    visibility: hidden;
+    width: 30px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* 显示悬浮数值 */
+  .tooltip.show {
+    visibility: visible;
+  }
+
+body {
+  background-color: #f8f9fa;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+audio {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.audio-wrapper {
+  position: relative;
+}
+
+.audio-wrapper audio,
+.audio-wrapper input[type="range"] {
+  width: 100%;
+}
