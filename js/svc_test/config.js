@@ -28,7 +28,7 @@ var APP_KEY = 'YP7zqvfaSmXiZSGIGzOF79Gl';
 AV.init({
   appId: APP_ID,
   appKey: APP_KEY,
-  serverURLs: 'https://ceuvlldl.api.lncldglobal.com'
+  serverURLs: 'https://ceuvlldl.im.us-w1.lncldglobal.com'
   // serverURLs: 'https://cn1-api.leancloud.cn' //国内版，华北节点
 });
 
