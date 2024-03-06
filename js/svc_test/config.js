@@ -1,7 +1,7 @@
 // config.js
 function uuid() {
     var temp_url = URL.createObjectURL(new Blob());
-    var uuid = temp_url.toString(); // blob:https://xxx.com/b250d159-e1b6-4a87-9002-885d90033be3
+    var uuid = temp_url.toString(); 
     URL.revokeObjectURL(temp_url);
     return uuid.substr(uuid.lastIndexOf("/") + 1);
   }
@@ -23,46 +23,18 @@ function uuid() {
   }
 }
 
-// 初始化leancloud的应用ID和应用Key
-// var APP_ID = 'bW7ca26Fgl1LvXlJpBq0w9uG-MdYXbMMI'; //国际版
-// var APP_KEY = 'U85ANTgGGYMiLY7tUHYWPGkN';
-
-var APP_ID = 'xBfywiBcWnaBX5res3WKixrN-gzGzoHsz';
-var APP_KEY = 'V1kk03BwJEHc3dLLYtKqCvnN';
+var APP_ID = 'CeUVLldlJLanFDEVJFzbJCY9-MdYXbMMI';
+var APP_KEY = 'YP7zqvfaSmXiZSGIGzOF79Gl';
 AV.init({
   appId: APP_ID,
   appKey: APP_KEY,
-  serverURLs: 'https://xbfywibc.lc-cn-n1-shared.com'
+  serverURLs: 'https://ceuvlldl.api.lncldglobal.com'
   // serverURLs: 'https://cn1-api.leancloud.cn' //国内版，华北节点
 });
 
 // 获取html表单元素
 var form = document.getElementById('my-form');
-// function getIPFromAmazon () {
-//   return fetch ("https://checkip.amazonaws.com/")
-//   .then (res => res.text ())
-//   .then (data => data)
-// }
-// var ip = "";
-// var $ = require('jquery');
-// ip = VIH_DisplayFormat?VIH_DisplayFormat:"";
-
-// $.get ('https://yacdn.org/proxy/http://www.hashemian.com/js/visitorIP.js.php', function (data) {
-//   console.log (data); 
-//   ip = data;
-// });
-// $.get ('http://www.hashemian.com/js/visitorIP.js.php', function (data) {
-//   console.log (data); 
-//   ip = data;
-// });
-// var uip = getIPFromAmazon()
-// .then (uip => {
-//   console.log (uip);
-//   //只能在这里调用uip
-//   ip = uip;
-// })
-
-var content = "";
+var score_array = [];
 // 监听表单的提交事件
 var startTime = new Date();
 var uid = uuid();
@@ -73,35 +45,8 @@ form.addEventListener('submit', function(event) {
   // 获取填写表单的时间（s）
   var timeSpent = (endTime - startTime) / 1000;
   for (var i = 1;i <= 7; i++){
-    var A1 = checkRadioValue('is_generated', i);
-    var A2 = checkRadioValue('music_class', i);
-    var A3 = checkRadioValue('harmony_score', i);
-    var A4 = checkRadioValue('creative_score', i);
-    content = content + 'music_' + i + '=Q1:'+ A1 +',' + 'Q2:'+ A2 +','+ 'Q3:'+ A3 +',' + 'Q4:'+ A4 +';';
-  }
-  for (var i = 1;i <= 4; i++){
-    var A1 = checkRadioValue('is_generated', i + 'a');
-    var A2 = checkRadioValue('music_class', i + 'a');
-    var A3 = checkRadioValue('harmony_score', i + 'a');
-    var A4 = checkRadioValue('creative_score', i + 'a');
-    
-    
-    var B1 = checkRadioValue('is_generated', i + 'b');
-    var B2 = checkRadioValue('music_class', i + 'b');
-    var B3 = checkRadioValue('harmony_score', i + 'b');
-    var B4 = checkRadioValue('creative_score', i + 'b');
-    var B5 = checkRadioValue('music_score', i + 'b');
-
-    if (B5 == 'B'){
-        A5 = 0;
-        B5 = 1;
-    }
-    else{
-        A5 = 1;
-        B5 = 0;
-    }
-    content = content + 'music_' + i + 'a' + '=Q1:'+ A1 +',' + 'Q2:'+ A2 +','+ 'Q3:'+ A3 +',' + 'Q4:'+ A4 + ',' + 'Q5:'+ A5 +';';
-    content = content + 'music_' + i + 'b' + '=Q1:'+ B1 +',' + 'Q2:'+ B2 +','+ 'Q3:'+ B3 +',' + 'Q4:'+ B4 + ',' + 'Q5:'+ B5 +';';
+    temp = checkinputValue('score_', i);
+    score_array.push(temp);
   }
   // 创建一个leancloud的对象类，用于存储表单信息
   var FormInfo = AV.Object.extend('form_data'); //这里form_data即我们创建好的class的类名，主要大小写也要一致
